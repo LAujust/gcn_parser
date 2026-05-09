@@ -1,5 +1,8 @@
 # GCN Circular Parser
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Extract structured astrophysical information from NASA GCN circulars using an LLM via OpenRouter.
 
 ## Features
@@ -11,7 +14,8 @@ Extract structured astrophysical information from NASA GCN circulars using an LL
 ## Installation
 
 ```bash
-cd /Volumes/T7/Shared_Files/EP/Projects/gcn_parser
+git clone git@github.com:LAujust/gcn_parser.git
+cd gcn_parser
 pip install -r requirements.txt
 ```
 
@@ -109,3 +113,7 @@ gcn_parser/
 ## Default Model
 
 `minimax/minimax-m2.5:free` via OpenRouter.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
