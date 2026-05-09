@@ -6,7 +6,8 @@ class Measurement(BaseModel):
     value: Optional[float] = None
     band: Optional[str] = None
     instrument: Optional[str] = None
-    date: Optional[str] = None
+    utc: Optional[str] = None
+    mjd: Optional[float] = None
     unit: Optional[str] = None
     upper_limit: Optional[bool] = None
 

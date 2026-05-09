@@ -69,7 +69,8 @@ Each circular is an object containing the GCN number and the extracted fields.
           "value": 18.5,
           "band": "r",
           "instrument": "ZTF",
-          "date": "2025-01-01T12:00:00",
+          "utc": "2025-01-01T12:00:00Z",
+          "mjd": null,
           "unit": "AB mag",
           "upper_limit": false
         }
@@ -89,7 +90,8 @@ The `--csv` option aggregates all `flux_magnitude` measurements across circulars
 | Column | Description |
 |--------|-------------|
 | `gcn_number` | Source circular |
-| `date` | Observation date/time or MJD |
+| `utc` | Observation time in ISO-8601 UTC |
+| `mjd` | Modified Julian Date (optional) |
 | `value` | Numeric measurement |
 | `unit` | e.g. `mag`, `AB mag`, `erg cm^-2 s^-1` |
 | `band` | Photometric band |

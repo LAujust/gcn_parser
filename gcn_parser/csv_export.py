@@ -7,7 +7,8 @@ from .models import CircularExtraction
 
 _CSV_FIELDNAMES = [
     "gcn_number",
-    "date",
+    "utc",
+    "mjd",
     "value",
     "unit",
     "band",
@@ -46,7 +47,12 @@ def build_lightcurve_csv(
             rows.append(
                 {
                     "gcn_number": gcn_number,
-                    "date": m.date if hasattr(m, "date") else m.get("date", ""),
+                    "utc": m.utc if hasattr(m, "utc") else m.get("utc", ""),
+                    "mjd": (
+                        m.mjd if hasattr(m, "mjd") and m.mjd is not None
+                        else m.get("mjd") if m.get("mjd") is not None
+                        else ""
+                    ),
                     "value": (
                         m.value if hasattr(m, "value") and m.value is not None
                         else m.get("value") if m.get("value") is not None
@@ -61,8 +67,8 @@ def build_lightcurve_csv(
                 }
             )
 
-    # Sort by date string if present (simple lexicographic sort)
-    rows.sort(key=lambda r: r["date"] or "")
+    # Sort by UTC string if present (simple lexicographic sort)
+    rows.sort(key=lambda r: r["utc"] or "")
 
     output = open(csv_path, "w", newline="") if csv_path else sys.stdout
     try:
