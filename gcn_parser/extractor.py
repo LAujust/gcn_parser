@@ -4,8 +4,11 @@ import time
 from typing import Optional
 
 import requests
+from dotenv import load_dotenv
 
 from .models import CircularExtraction
+
+load_dotenv()
 
 _DEFAULT_MODEL = "minimax/minimax-m2.5:free"
 _BASE_URL = "https://openrouter.ai/api/v1"

@@ -29,7 +29,7 @@ def build_lightcurve_csv(
     """
     rows = []
     for item in extractions:
-        gcn_number = item.get("gcn", "")
+        gcn_number = item.get("gcn", "").split(" ")[-1]
         extraction = item.get("extraction")
         if not extraction:
             continue
