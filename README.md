@@ -201,7 +201,7 @@ gcn-parser EP260321a -m openai/gpt-4o-mini
 | Model | Speed | Cost | Notes |
 |-------|-------|------|-------|
 | `minimax/minimax-m2.5:free` | Slow | Free | Rate-limited; good for testing |
-| `openai/gpt-4o-mini` | Fast | Very low | Best balance of speed, cost, and accuracy |
+| `openai/gpt-5-nano` | Fast | Very low | Best balance of speed, cost, and accuracy |
 | `openai/gpt-4o` | Fast | Low | Higher accuracy for complex circulars |
 | `qwen/qwen3.5-flash-02-23` | Fast | Very low | Good budget option |
 
