@@ -37,12 +37,13 @@ _SYSTEM_PROMPT = (
 )
 
 
-def _api_key() -> str:
-    key = os.getenv("OPENROUTER_API_KEY")
+def _api_key(provided: Optional[str] = None) -> str:
+    key = provided or os.getenv("OPENROUTER_API_KEY")
     if not key:
         raise RuntimeError(
-            "OPENROUTER_API_KEY environment variable is not set. "
-            "Export it or add it to a .env file."
+            "OPENROUTER_API_KEY is not set. "
+            "Pass it as the api_key argument, export it as an environment variable, "
+            "or add it to a .env file."
         )
     return key
 
@@ -64,6 +65,7 @@ def _extract_json(raw: str) -> dict:
 def extract_circular(
     text: str,
     model: Optional[str] = None,
+    api_key: Optional[str] = None,
     max_retries: int = 3,
     base_delay: float = 2.0,
 ) -> CircularExtraction:
@@ -74,6 +76,8 @@ def extract_circular(
     Args:
         text: Raw text content of the circular.
         model: OpenRouter model identifier. Defaults to ``minimax/minimax-m2.5:free``.
+        api_key: OpenRouter API key. If not provided, falls back to the
+            ``OPENROUTER_API_KEY`` environment variable or ``.env`` file.
         max_retries: Maximum number of retries.
         base_delay: Initial delay between retries in seconds.
 
@@ -85,7 +89,7 @@ def extract_circular(
     """
     model = model or _DEFAULT_MODEL
     headers = {
-        "Authorization": f"Bearer {_api_key()}",
+        "Authorization": f"Bearer {_api_key(api_key)}",
         "Content-Type": "application/json",
     }
     payload = {

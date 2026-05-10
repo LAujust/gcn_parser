@@ -110,7 +110,12 @@ from gcn_parser import fetch_event_circulars, extract_circular, build_lightcurve
 circulars = fetch_event_circulars("EP260321a")
 
 # Extract structured info from the first circular
-result = extract_circular(circulars[0]["text"])
+# Pass the API key directly (or omit it to use env / .env)
+result = extract_circular(
+    circulars[0]["text"],
+    api_key="sk-or-v1-...",
+    model="openai/gpt-4o-mini",
+)
 print(result.summary)
 print(result.redshift)
 print(result.coordinates.ra, result.coordinates.dec)
