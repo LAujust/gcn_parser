@@ -13,16 +13,18 @@ This is a light-weight package for extracting structured astrophysical informati
 
 ## Installation
 
+From PyPI:
+
+```bash
+pip install gcn-circular-llm
+```
+
+Or from source:
+
 ```bash
 git clone git@github.com:LAujust/gcn_parser.git
 cd gcn_parser
 pip install -e .
-```
-
-Or install directly without cloning:
-
-```bash
-pip install git+https://github.com/LAujust/gcn_parser.git
 ```
 
 ## Configuration
