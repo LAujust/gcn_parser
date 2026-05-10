@@ -4,6 +4,7 @@ from typing import Optional
 
 class Measurement(BaseModel):
     value: Optional[float] = None
+    magerr: Optional[float] = None
     band: Optional[str] = None
     instrument: Optional[str] = None
     utc: Optional[str] = None

@@ -11,10 +11,10 @@ _CSV_FIELDNAMES = [
     "utc",
     "mjd",
     "value",
+    "magerr",
     "unit",
     "band",
     "instrument",
-    "upper_limit",
 ]
 
 # MJD epoch: 1858-11-17 00:00:00 UTC
@@ -206,6 +206,25 @@ def build_lightcurve_csv(
             if isinstance(m, CircularExtraction):
                 # shouldn't happen, but keep type checker happy
                 continue
+            val = (
+                m.value if hasattr(m, "value") and m.value is not None
+                else m.get("value") if m.get("value") is not None
+                else ""
+            )
+            magerr = (
+                m.magerr if hasattr(m, "magerr") and m.magerr is not None
+                else m.get("magerr") if m.get("magerr") is not None
+                else ""
+            )
+            is_ul = bool(
+                m.upper_limit if hasattr(m, "upper_limit") else m.get("upper_limit")
+            )
+
+            # Transform upper limits: value=0, magerr=original value
+            if is_ul and val not in (None, ""):
+                magerr = val
+                val = 0
+
             row = {
                 "gcn_number": gcn_number,
                 "utc": m.utc if hasattr(m, "utc") else m.get("utc", ""),
@@ -214,17 +233,11 @@ def build_lightcurve_csv(
                     else m.get("mjd") if m.get("mjd") is not None
                     else ""
                 ),
-                "value": (
-                    m.value if hasattr(m, "value") and m.value is not None
-                    else m.get("value") if m.get("value") is not None
-                    else ""
-                ),
+                "value": val,
+                "magerr": magerr,
                 "unit": m.unit if hasattr(m, "unit") else m.get("unit", ""),
                 "band": m.band if hasattr(m, "band") else m.get("band", ""),
                 "instrument": m.instrument if hasattr(m, "instrument") else m.get("instrument", ""),
-                "upper_limit": "true" if (
-                    m.upper_limit if hasattr(m, "upper_limit") else m.get("upper_limit")
-                ) else "false",
             }
             rows.append(_standardize_row(row))
 
