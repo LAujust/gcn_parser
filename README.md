@@ -30,7 +30,7 @@ pip install gcn-circular-llm
 ```bash
 git clone git@github.com:LAujust/gcn_parser.git
 cd gcn_parser
-pip install -e .
+pip install .
 ```
 
 ### Requirements
@@ -183,7 +183,7 @@ Rows are sorted chronologically (by UTC, with MJD as fallback).
 
 ## Models & Rate Limiting
 
-The default model is `minimax/minimax-m2.5:free`, which is free to use but has strict rate limits. If you see `429 Too Many Requests` or empty responses, the package automatically retries with exponential backoff, but processing many circulars can still take 20–30 minutes.
+The default model is `minimax/minimax-m2.5:free` and time lag is `2s` by default, which is free to use but has strict rate limits. If you see `429 Too Many Requests` or empty responses, the package automatically retries with exponential backoff, but processing many circulars can still take 20–30 minutes.
 
 For faster analysis, switch to a low-cost paid model:
 
@@ -208,19 +208,6 @@ gcn-parser EP260321a -m openai/gpt-4o-mini
 | `OpenRouter returned an empty response` | Model does not support JSON mode | The package now uses prompt-only JSON; if this persists, switch model |
 | `OPENROUTER_API_KEY is not set` | Missing API key | Export the key or create a `.env` file |
 | `No circulars found` | Event name typo or GCN has no circulars | Check the exact event name on [gcn.nasa.gov](https://gcn.nasa.gov/) |
-
-## Project Structure
-
-```
-gcn_parser/
-├── __init__.py      # Package version and public API
-├── __main__.py      # Enables `python -m gcn_parser`
-├── archive.py       # Fetch circulars from GCN archive
-├── models.py        # Pydantic schema for structured extraction
-├── extractor.py     # OpenRouter LLM client and prompt
-├── csv_export.py    # Flatten measurements to CSV with preprocessing
-└── cli.py           # argparse CLI entry point
-```
 
 ## License
 
