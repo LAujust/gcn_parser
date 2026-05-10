@@ -1,9 +1,29 @@
+Metadata-Version: 2.4
+Name: gcn-parser
+Version: 0.1.0
+Summary: Extract structured astrophysical information from NASA GCN circulars using an LLM via OpenRouter.
+Author: LAujust
+License: MIT
+Project-URL: Homepage, https://github.com/LAujust/gcn_parser
+Project-URL: Issues, https://github.com/LAujust/gcn_parser/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: pydantic
+Requires-Dist: python-dotenv
+Dynamic: license-file
+
 # GCN Circular Parser
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is a light-weight package for extracting structured astrophysical information from NASA GCN circulars using an LLM via [OpenRouter](https://openrouter.ai/).
+Extract structured astrophysical information from NASA GCN circulars using an LLM via [OpenRouter](https://openrouter.ai/).
 
 ## Features
 

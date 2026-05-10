@@ -1,0 +1,17 @@
+gcn_number,utc,mjd,value,unit,band,instrument,upper_limit
+43577,,61071.183,20.9,mag,r,Las Cumbres 1m telescope,false
+43583,2026-01-31T03:28:00.15Z,,6.3e-10,erg/s/cm^2,0.5-4 keV,WXT (Einstein Probe),false
+43583,2026-01-31T04:14:01Z,,4.4e-13,erg/s/cm^2,0.5-10 keV,FXT (Einstein Probe),false
+43584,2026-01-31T04:40:00Z,,21.1,AB mag,r,COLIBRÍ/DDRAGO,false
+43584,2026-01-31T04:40:00Z,,20.8,AB mag,z,COLIBRÍ/DDRAGO,false
+43578,2026-01-31T04:40:00Z,,21.05,AB mag,r,COLIBRÍ/DDRAGO,false
+43578,2026-01-31T04:40:00Z,,20.69,AB mag,z,COLIBRÍ/DDRAGO,false
+43581,2026-01-31T04:56:50Z,,21.18,AB mag,SDSS r,NOT/ALFOSC,false
+43581,2026-01-31T04:56:50Z,,20.75,AB mag,SDSS z,NOT/ALFOSC,false
+43582,2026-01-31T07:30:09Z,,21.2,AB mag,r,VLT UT3 (Melipal),false
+43584,2026-01-31T11:52:00Z,,21.4,AB mag,r,COLIBRÍ/DDRAGO,false
+43584,2026-01-31T11:52:00Z,,21.2,AB mag,z,COLIBRÍ/DDRAGO,false
+43588,2026-01-31T16:25:55Z,,19.1,mag,r-band,2.16-m telescope at Xinglong Observatory,true
+43589,2026-01-31T18:48:46Z,60703.78,21.7,AB mag,VT_R,SVOM/VT,false
+43589,2026-01-31T19:00:46Z,60703.79,22.38,AB mag,VT_B,SVOM/VT,false
+43626,2026-02-03T06:37:00Z,,40.0,uJy,10 GHz,Karl G. Jansky Very Large Array (VLA),false
