@@ -188,7 +188,7 @@ Rows are sorted chronologically (by UTC, with MJD as fallback).
 
 ## Models & Rate Limiting
 
-The default model is `minimax/minimax-m2.5:free` and time lag is `2s` by default, which is free to use but has strict rate limits. If you see `429 Too Many Requests` or empty responses, the package automatically retries with exponential backoff, but processing many circulars can still take 20–30 minutes.
+The default model is `minimax/minimax-m2.5:free` and time lag is `2s` by default, which is free to use but has strict rate limits. If you see `429 Too Many Requests` or empty responses, the package automatically retries with exponential backoff, but processing many circulars can still take 20–30 minutes. Detailed rate limits can be found in https://openrouter.ai/docs/api/reference/limits. If you want to use `free` model (with `:free` in model name), strongly recommend add credit more than $10 to raise the daily rate limit. 
 
 For faster analysis, switch to a low-cost paid model:
 
