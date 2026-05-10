@@ -149,7 +149,7 @@ Each circular produces an object with the following schema:
       "flux_magnitude": [
         {
           "value": 18.5,
-          "magerr": null,
+          "err": null,
           "band": "r",
           "instrument": "ZTF",
           "utc": "2025-01-01T12:00:00Z",
@@ -180,7 +180,7 @@ The `--csv` option flattens all `flux_magnitude` entries across circulars into a
 | `utc` | Observation time in ISO-8601 UTC |
 | `mjd` | Modified Julian Date (optional) |
 | `value` | Numeric measurement |
-| `magerr` | Measurement error; for upper limits, `value` is set to `0` and `magerr` stores the limit |
+| `err` | Measurement error; for upper limits, `value` is set to `0` and `err` stores the limit |
 | `unit` | e.g. `mag`, `AB mag`, `uJy`, `mJy/beam` |
 | `band` | Standardized photometric band or frequency |
 | `instrument` | Telescope or instrument name |

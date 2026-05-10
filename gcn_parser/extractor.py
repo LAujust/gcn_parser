@@ -26,7 +26,7 @@ _SYSTEM_PROMPT = (
     "- host_galaxy: string or null\n"
     "- classification: string or null\n"
     "- flux_magnitude: list of objects, each with:\n"
-    "    value (number or null), magerr (number or null, measurement error),\n"
+    "    value (number or null), err (number or null, measurement error),\n"
     "    band (string or null), instrument (string or null),\n"
     "    utc (string or null, ISO-8601 UTC datetime, e.g. '2025-01-01T12:00:00Z'),\n"
     "    mjd (number or null, Modified Julian Date),\n"

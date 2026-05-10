@@ -11,7 +11,7 @@ _CSV_FIELDNAMES = [
     "utc",
     "mjd",
     "value",
-    "magerr",
+    "err",
     "unit",
     "band",
     "instrument",
@@ -211,18 +211,18 @@ def build_lightcurve_csv(
                 else m.get("value") if m.get("value") is not None
                 else ""
             )
-            magerr = (
-                m.magerr if hasattr(m, "magerr") and m.magerr is not None
-                else m.get("magerr") if m.get("magerr") is not None
+            err = (
+                m.err if hasattr(m, "err") and m.err is not None
+                else m.get("err") if m.get("err") is not None
                 else ""
             )
             is_ul = bool(
                 m.upper_limit if hasattr(m, "upper_limit") else m.get("upper_limit")
             )
 
-            # Transform upper limits: value=0, magerr=original value
+            # Transform upper limits: value=0, err=original value
             if is_ul and val not in (None, ""):
-                magerr = val
+                err = val
                 val = 0
 
             row = {
@@ -234,7 +234,7 @@ def build_lightcurve_csv(
                     else ""
                 ),
                 "value": val,
-                "magerr": magerr,
+                "err": err,
                 "unit": m.unit if hasattr(m, "unit") else m.get("unit", ""),
                 "band": m.band if hasattr(m, "band") else m.get("band", ""),
                 "instrument": m.instrument if hasattr(m, "instrument") else m.get("instrument", ""),

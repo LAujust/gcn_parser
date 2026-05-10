@@ -21,12 +21,12 @@ from gcn_parser.csv_export import build_lightcurve_csv
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-EVENT = "EP260321a"  # Change this to any event, e.g. "GRB250101A"
-OUTPUT_JSON = f"{EVENT.lower()}.json"
-OUTPUT_CSV = f"{EVENT.lower()}.csv"
+EVENT = "EP260131a"  # Change this to any event, e.g. "GRB250101A"
+OUTPUT_JSON = f"../data/{EVENT.lower()}.json"
+OUTPUT_CSV = f"../data/{EVENT.lower()}.csv"
 
 # Optional: override the default free model with a faster paid one
-MODEL = "openai/gpt-4o-mini"
+MODEL = "minimax/minimax-m2.5:free"
 
 # Optional: pass the API key directly instead of using env / .env
 # API_KEY = "sk-or-v1-..."
