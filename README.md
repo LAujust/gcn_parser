@@ -16,7 +16,13 @@ Extract structured astrophysical information from NASA GCN circulars using an LL
 ```bash
 git clone git@github.com:LAujust/gcn_parser.git
 cd gcn_parser
-pip install -r requirements.txt
+pip install -e .
+```
+
+Or install directly without cloning:
+
+```bash
+pip install git+https://github.com/LAujust/gcn_parser.git
 ```
 
 ## Configuration
@@ -35,13 +41,19 @@ Run the CLI for an event identifier:
 
 ```bash
 # JSON to stdout
-python -m gcn_parser GRB250101A
+gcn-parser GRB250101A
 
 # Save JSON and CSV light-curve
-python -m gcn_parser GRB250101A -o output.json --csv lightcurve.csv
+gcn-parser GRB250101A -o output.json --csv lightcurve.csv
 
 # Use a different model
-python -m gcn_parser GRB250101A -m openai/gpt-4o
+gcn-parser GRB250101A -m openai/gpt-4o
+```
+
+You can also run it as a module:
+
+```bash
+python -m gcn_parser GRB250101A
 ```
 
 ## Output

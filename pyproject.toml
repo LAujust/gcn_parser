@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcn-parser"
+version = "0.1.0"
+description = "Extract structured astrophysical information from NASA GCN circulars using an LLM via OpenRouter."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "LAujust"},
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "pydantic",
+    "python-dotenv",
+]
+
+[tool.setuptools.packages.find]
+include = ["gcn_parser*"]
+exclude = ["data*", "examples*", "tests*"]
+
+[project.scripts]
+gcn-parser = "gcn_parser.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/LAujust/gcn_parser"
+Issues = "https://github.com/LAujust/gcn_parser/issues"
