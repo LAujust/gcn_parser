@@ -128,7 +128,7 @@ gcn_parser/
 
 ## Default Model
 
-`minimax/minimax-m2.5:free` via OpenRouter.
+`minimax/minimax-m2.5:free` via OpenRouter. Note that `free` model has request limit from OpenRouter. We recommand use low cost model (e.g. `qwen/qwen3.5-flash-02-23`, `openai/gpt-5-nano`) if you want high speed analysis. 
 
 ## License
 
