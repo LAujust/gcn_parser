@@ -1,6 +1,6 @@
 """GCN Circular structured extractor."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .archive import fetch_event_circulars
 from .extractor import extract_circular, extract_circulars_batch

@@ -1,2 +1,0 @@
-[console_scripts]
-gcn-parser = gcn_parser.cli:main

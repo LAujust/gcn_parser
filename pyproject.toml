@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gcn-circular-llm"
-version = "0.1.0"
+version = "0.2.0"
 description = "Extract structured astrophysical information from NASA GCN circulars using an LLM via OpenRouter."
 readme = "README.md"
 license = {text = "MIT"}
