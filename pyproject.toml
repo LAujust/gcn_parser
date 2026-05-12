@@ -24,9 +24,13 @@ dependencies = [
     "python-dotenv",
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["pytest", "black", "ruff"]
+
 [tool.setuptools.packages.find]
 include = ["gcn_parser*"]
-exclude = ["data*", "examples*", "tests*"]
+exclude = ["data*", "examples*"]
 
 [project.scripts]
 gcn-parser = "gcn_parser.cli:main"
